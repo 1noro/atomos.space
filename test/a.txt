@@ -1,0 +1,3 @@
+#!/bin/bash
+#(c) ARG [año]
+#[nombre-programa]
