@@ -1,7 +1,7 @@
 
 /* global graphicUtils */
 
-function electron () {
+function electron() {
     
     var
         object,
@@ -19,9 +19,11 @@ function electron () {
         txt,
         color,
         vibrarPos=true,
-        interval;
+        interval,
+        elemPadre,
+        txtDiv;
 
-    this.constructor=function(nId,nRadio,nRelCenterX,nRelCenterY,nDeg,nSep,nTxt,nColor) {
+    this.constructor=function(nId,nRadio,nRelCenterX,nRelCenterY,nDeg,nSep,nTxt,nColor,nElemPadre) {
         id=nId;
         radio=nRadio;
         relCenterX=nRelCenterX;
@@ -30,6 +32,7 @@ function electron () {
         sep=nSep;
         txt=nTxt;
         color=nColor;
+        elemPadre=nElemPadre;
     };
 
     var calcPosition=function() {
@@ -61,19 +64,16 @@ function electron () {
         return out;
     };
     
-    var createObject=function() {
-        var 
-            cont=document.getElementById("molecula"),
-            txtDiv=document.createElement("div");
+    var createObject=function() { 
+        txtDiv=document.createElement("div");
     
         txtDiv.appendChild(document.createTextNode(txt));
         txtDiv.style.fontSize=(lH-2)+"px";
         txtDiv.style.lineHeight=lH+"px";
-//        txtDiv.style.marginTop=(radio-(lH/2))+"px";
+        // UNA VEZ MOSTRADO SE LE ASIGNA EL MARGIN TOP
 
         object=document.createElement("div");
         object.appendChild(txtDiv);
-        cont.appendChild(object);
         
         object.id=id;
         object.className="electron";
@@ -89,20 +89,19 @@ function electron () {
         object.style.backgroundColor=color;
         
         object.onmouseover=function() {
-            graphicUtils.eList[this.id].empezarVibrar();
+            graphicUtils.POL.molecula[this.id].empezarVibrar();
         };
         
         object.onmouseout=function() {
-            graphicUtils.eList[this.id].pararVibrar();
+            graphicUtils.POL.molecula[this.id].pararVibrar();
         };
 
         if (id==="electron0") {
             object.onmousedown=function() {
-                graphicUtils.eList[this.id].openPopup("popupContacto");
+                graphicUtils.POL.molecula[this.id].openPopup("popupContacto");
             };
         }
         
-        txtDiv.style.marginTop=(radio-(txtDiv.offsetHeight/2))+"px";
     };
     
     this.openPopup=function(id) {
@@ -149,6 +148,8 @@ function electron () {
     var situar=function() {
         object.style.top=top+"px";
         object.style.left=left+"px";
+        elemPadre.appendChild(object);
+        txtDiv.style.marginTop=(radio-(txtDiv.offsetHeight/2))+"px";
     };
     
     this.main=function() {

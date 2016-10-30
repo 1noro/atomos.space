@@ -1,6 +1,8 @@
 
 var graphicUtils=new function() {
     
+    this.POL={};
+    
     this.calcCenterW=function() {
         var
             coord=[],
@@ -76,6 +78,15 @@ var graphicUtils=new function() {
         return valRel;
     };
     
+    this.convRelM=function(por,medida) {
+        var
+            valRel;
+        
+        valRel=medida*por;
+        
+        return valRel;
+    };
+    
     this.eList={};
     this.escala=1.3;
     
@@ -99,7 +110,8 @@ var graphicUtils=new function() {
                 dat[i][1],
                 separacion,
                 dat[i][3],
-                dat[i][4]
+                dat[i][4],
+                document.getElementById("molecula")
             );
             this.eList[id2].main();
             i++;

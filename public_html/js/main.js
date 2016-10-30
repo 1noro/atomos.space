@@ -3,7 +3,8 @@
 
 function main() {
     var 
-        coordCent,
+        myPortadaDisp,
+//        coordCent,
         dat=[];
 
     dat=[
@@ -25,13 +26,17 @@ function main() {
 //    alert(document.getElementById("molecula").style.width);
 //    alert(document.getElementById("molecula").style.height);
 
-    coordCent=graphicUtils.calcCenterW();
-    coordMolecula=graphicUtils.calcCenterO("molecula");
+//    coordCent=graphicUtils.calcCenterW();
+//    coordMolecula=graphicUtils.calcCenterO("molecula");
     
 //    alert(coordMolecula.x+" "+coordMolecula.y);
-    var
-        newCx=coordMolecula.x*1.30,
-        newCy=coordMolecula.y;
-    graphicUtils.printElectrones("electron",newCx,newCy,dat);
+//    var
+//        newCx=coordMolecula.x*1.30,
+//        newCy=coordMolecula.y;
+
+//    graphicUtils.printElectrones("electron",newCx,newCy,dat);
+    
+    myPortadaDisp=new portadaDisp(window.innerWidth,window.innerHeight,document.getElementById("contGen"),dat);
+    myPortadaDisp.main();
    
 }
