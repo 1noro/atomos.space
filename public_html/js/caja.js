@@ -16,6 +16,7 @@ function caja (nElemPadre,nMarginBottom,nHtmlIn,nId) {
         object.style.backgroundColor="grey";
 //        object.style.position="absolute";
         object.style.marginBottom=marginBottom+"px";
+        //
         object.style.padding=graphicUtils.convRelW(0.01)+"px";
         
         object.id=id;

@@ -13,7 +13,7 @@ function contCajas (nElemPadre,nMarginTop,nId) {
         object=document.createElement("div");
         
 //        object.style.backgroundColor="red";
-        object.style.position="absolute";
+//        object.style.position="absolute";
         object.style.marginTop=marginTop+"px";
         
         object.id=id;

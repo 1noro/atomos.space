@@ -22,15 +22,19 @@ function main() {
         cajas:[
             [
                 "\
-                    <div> \n\
-                        HOLA \n\
-                    </div> \n\
+                    <div>\n\
+                        <center>¿Y esta letra? --> Esta letra <\center>\n\<br>\
+                 Anna Vives - link a la web de Anna Vives (www.annavives.com)\n\
+                    \n\
+                    </div>\n\
                 "
             ],
             [
                 "\
                     <div>\n\
-                        HOLA\n\
+                        <center>Iniciación a la cocina<\center>\n\<br>\
+                 Nosotros también nos fuimos de casa de nuestros padres. Pasamos un año complicado a base de pizza precocinada y yogures. Hay salida.\n\
+                    \n\
                     </div>\n\
                 "
             ]

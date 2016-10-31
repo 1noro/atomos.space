@@ -163,7 +163,8 @@ body {
 }
 
 .contCajas {
-    width: 100%;
+    width: 90%;
+    margin: 0px auto;
 }
 
 .caja {
