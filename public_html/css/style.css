@@ -14,7 +14,7 @@ body {
     src: url(../fon/Anna-Roman.woff);
 }
 
-.molecula {
+.moleculaOLD {
     /*background-color: #ddd;*/
     position:relative;
     top: 0px;
@@ -24,6 +24,10 @@ body {
     
     width:500px;
     height:500px;
+}
+
+.molecula {
+    
 }
 
 .moleculaLogo {
@@ -83,6 +87,21 @@ body {
 }
 
 .contInfo {
+    font-size: 1.8em;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    bottom: 50px;
+    left: 70%; /*HACER CON JS*/
+    background-color: #000;
+    color: #fff;
+    padding:10px;
+    border-style: solid;
+    border-color: #A07E59;
+    border-width: 10px;
+}
+
+.pizarra {
     font-size: 1.8em;
     position: absolute;
     right: 50px;

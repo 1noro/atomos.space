@@ -15,7 +15,7 @@ function molecula (nElemPadre,nTop,nLeft,nRight,nBottom,nId) {
         
         object=document.createElement("div");
         
-        object.style.backgroundColor="blue";
+        object.style.backgroundColor="";
         object.style.position="absolute";
         object.style.top=top+"px";
         object.style.left=left+"px";
@@ -23,7 +23,7 @@ function molecula (nElemPadre,nTop,nLeft,nRight,nBottom,nId) {
         object.style.bottom=bottom+"px";
         
         object.id=id;
-        object.className="pizarra";
+        object.className="molecula";
         
     };
     

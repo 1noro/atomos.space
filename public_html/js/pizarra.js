@@ -17,7 +17,7 @@ function pizarra (nElemPadre,nHtmlIn,nTop,nLeft,nRight,nBottom,nId) {
         object=document.createElement("div");
         object.innerHTML=htmlIn;
         
-        object.style.backgroundColor="green";
+//        object.style.backgroundColor="";
         object.style.position="absolute";
         object.style.top=top+"px";
         object.style.left=left+"px";

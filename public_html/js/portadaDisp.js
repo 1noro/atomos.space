@@ -34,11 +34,11 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
             tamanho,
             separacion;
     
+        graphicUtils.POL.molecula={};
         while (i<elDat.length) {
             tamanho=graphicUtils.convRelO(elDat[i][0]*graphicUtils.escala,"molecula1");
             separacion=graphicUtils.convRelO(elDat[i][2]*graphicUtils.escala,"molecula1");
             id2=id+""+i;
-            graphicUtils.POL.molecula={};
             graphicUtils.POL.molecula[id2]=new electron();
             graphicUtils.POL.molecula[id2].constructor(
                 id2,

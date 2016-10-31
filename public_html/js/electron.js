@@ -15,7 +15,7 @@ function electron() {
         relCenterX,
         deg,
         sep,
-        lH=graphicUtils.convRelO(0.015*graphicUtils.escala,"molecula"),
+        lH=graphicUtils.convRelO(0.015*graphicUtils.escala,"molecula1"),
         txt,
         color,
         vibrarPos=true,
@@ -149,6 +149,7 @@ function electron() {
         object.style.top=top+"px";
         object.style.left=left+"px";
         elemPadre.appendChild(object);
+        
         txtDiv.style.marginTop=(radio-(txtDiv.offsetHeight/2))+"px";
     };
     
