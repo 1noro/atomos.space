@@ -10,8 +10,6 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         dat={};
     
     var calcPositionDesktop=function() {
-        var 
-            coordMolecula;
         
         dat.pizarra={};
         dat.pizarra.top=0.05*wH;
@@ -24,6 +22,22 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         dat.molecula.left=0;
         dat.molecula.right=0.25*wW;
         dat.molecula.bottom=0;
+        
+    };
+    
+    var calcPositionMovil=function() {
+        
+        dat.pizarra={};
+        dat.pizarra.top=0.60*wH;
+        dat.pizarra.left=0.02*wW;
+        dat.pizarra.right=0.02*wW;
+        dat.pizarra.bottom=0.02*wW;
+        
+        dat.molecula={};
+        dat.molecula.top=0;
+        dat.molecula.left=0;
+        dat.molecula.right=0;
+        dat.molecula.bottom=0.40*wH;
         
     };
     
@@ -56,7 +70,7 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         }
     };
     
-    var situarDesktop=function() {
+    var situar=function() {
         graphicUtils.POL["pizarra"]=new pizarra (
             document.getElementById("contGen"),
             "Web en construcción",
@@ -90,7 +104,12 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
     };
     
     this.main=function() {
-        calcPositionDesktop();
-        situarDesktop();
+        if (wW>wH) {
+            calcPositionDesktop();
+        } else {
+            graphicUtils.escala=1.75;
+            calcPositionMovil();
+        }
+        situar();
     };
 };

@@ -88,7 +88,7 @@ var graphicUtils=new function() {
     };
     
     this.eList={};
-    this.escala=1.3;
+    this.escala=1.4;
     
     this.printElectrones=function(id,cX,cY,dat) {
         var 
