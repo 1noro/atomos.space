@@ -161,3 +161,11 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.contCajas {
+    width: 100%;
+}
+
+.caja {
+/*    width: 100%;*/
+}

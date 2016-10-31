@@ -1,13 +1,13 @@
 
 /* global graphicUtils */
 
-function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
+function portadaDisp(nWW,nWH,nElemPadre,datos) {
     var
         elemPadre=nElemPadre,
         wW=nWW,
         wH=nWH,
-        eDat=nEDat,
-        dat={};
+        dat={},
+        contGen=document.getElementById("contGen");
     
     var calcPositionDesktop=function() {
         
@@ -41,7 +41,7 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         
     };
     
-    var printElectrones=function(id,cX,cY,elDat) {
+    var printElectrones=function(id,cX,cY) {
         var 
             i=0,
             id2,
@@ -49,9 +49,9 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
             separacion;
     
         graphicUtils.POL.molecula={};
-        while (i<elDat.length) {
-            tamanho=graphicUtils.convRelO(elDat[i][0]*graphicUtils.escala,"molecula1");
-            separacion=graphicUtils.convRelO(elDat[i][2]*graphicUtils.escala,"molecula1");
+        while (i<datos.electrones.length) {
+            tamanho=graphicUtils.convRelO(datos.electrones[i][0]*graphicUtils.escala,"molecula1");
+            separacion=graphicUtils.convRelO(datos.electrones[i][2]*graphicUtils.escala,"molecula1");
             id2=id+""+i;
             graphicUtils.POL.molecula[id2]=new electron();
             graphicUtils.POL.molecula[id2].constructor(
@@ -59,10 +59,10 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
                 tamanho,
                 cX,
                 cY,
-                elDat[i][1],
+                datos.electrones[i][1],
                 separacion,
-                elDat[i][3],
-                elDat[i][4],
+                datos.electrones[i][3],
+                datos.electrones[i][4],
                 document.getElementById("molecula1")
             );
             graphicUtils.POL.molecula[id2].main();
@@ -70,9 +70,28 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         }
     };
     
+    var printCajas=function(id,elemPadre,marginBottom) {
+        var
+            i=0,
+            id2;
+    
+        graphicUtils.POL.cajas={};
+        while (i<datos.cajas.length) {
+            id2=id+""+i;
+            graphicUtils.POL.cajas[id2]=new caja(
+                elemPadre,
+                marginBottom,
+                datos.cajas[i][0],
+                id2
+            );
+            graphicUtils.POL.cajas[id2].main();
+            i++;
+        }
+    };
+    
     var situar=function() {
         graphicUtils.POL["pizarra"]=new pizarra (
-            document.getElementById("contGen"),
+            contGen,
             "Web en construcción",
             dat.pizarra.top,
             dat.pizarra.left,
@@ -82,7 +101,7 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         );
         
         graphicUtils.POL["molecula"]=new molecula(
-            document.getElementById("contGen"),
+            contGen,
             dat.molecula.top,
             dat.molecula.left,
             dat.molecula.right,
@@ -98,9 +117,17 @@ function portadaDisp(nWW,nWH,nElemPadre,nEDat) {
         printElectrones(
                 "electron",
                 dat.molecula.center.x*1.30,
-                dat.molecula.center.y,
-                eDat
-            );
+                dat.molecula.center.y
+        );
+
+        graphicUtils.POL["contCajas"]=new contCajas(
+            contGen,
+            wH+graphicUtils.convRelH(0.15),
+            "contCajas"
+        );
+        graphicUtils.POL.contCajas.main();
+        
+        printCajas("caja",graphicUtils.POL.contCajas.getObject(),graphicUtils.convRelH(0.15));
     };
     
     this.main=function() {

@@ -58,10 +58,19 @@ var graphicUtils=new function() {
     this.convRelW=function(por) {
         var
             valRel,
-            wW = window.innerWidth,
-            wH = window.innerHeight;
+            wW = window.innerWidth;
         
         valRel=wW*por;
+        
+        return valRel;
+    };
+    
+    this.convRelH=function(por) {
+        var
+            valRel,
+            wH = window.innerHeight;
+        
+        valRel=wH*por;
         
         return valRel;
     };
