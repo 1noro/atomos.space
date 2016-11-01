@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31-oct-2016, 19:48:56
+    Author     : lagarto
+*/
+
+body { 
+  font: 14px/2 Georgia, serif; 
+}
+
+#page-wrap { 
+  max-width: 500px; 
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+h1, h2 {
+  line-height: 1.2;
+}
+
+p, ul, h1 { 
+  margin: 0 0 1rem 0; 
+}
